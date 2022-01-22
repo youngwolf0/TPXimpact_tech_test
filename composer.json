@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/coder": "^8.3",
         "drupal/config_split": "^1.7",
         "drupal/context": "^4.1",
         "drupal/core-composer-scaffold": "^9.3",
@@ -25,7 +26,8 @@
         "drupal/devel": "^4.1",
         "drupal/field_permissions": "^1.1",
         "drupal/paragraphs": "^1.12",
-        "drupal/pathauto": "^1.8"
+        "drupal/pathauto": "^1.8",
+        "squizlabs/php_codesniffer": "^3.6"
     },
     "conflict": {
         "drupal/drupal": "*"
