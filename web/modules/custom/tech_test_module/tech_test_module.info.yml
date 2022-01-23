@@ -1,0 +1,6 @@
+name: Tech Test Module
+type: module
+description: contains bespoke functionality for Tech Test site.
+package: Wolftech
+core: 8.x
+core_version_requirement: ^8 || ^9

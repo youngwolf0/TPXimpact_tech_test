@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * This module contains custom functionality for the tech test website.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function tech_test_module_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if(tech_test_module_current_user_has_role('administrator')) {
+    $jimmy = 0;
+  }
+}
+
+/**
+ * @param string $role
+ *
+ * @return bool
+ */
+function tech_test_module_current_user_has_role($role) {
+  return in_array($role, \Drupal::currentUser()->getRoles());
+}
