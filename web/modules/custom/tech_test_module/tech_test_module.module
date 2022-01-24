@@ -11,8 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_alter().
  */
 function tech_test_module_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if(tech_test_module_current_user_has_role('administrator')) {
-    $jimmy = 0;
+  if(!tech_test_module_current_user_has_role('administrator')) {
+    $form['title']['widget'][0]['value']['#description'] = t('“Lorem ipsum dolor sit amet, consectetur adipiscing elit');
   }
 }
 
