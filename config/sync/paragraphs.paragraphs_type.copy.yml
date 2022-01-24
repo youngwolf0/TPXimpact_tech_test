@@ -1,0 +1,10 @@
+uuid: de70e63a-02f5-49b7-abef-e71428cde995
+langcode: en
+status: true
+dependencies: {  }
+id: copy
+label: Copy
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

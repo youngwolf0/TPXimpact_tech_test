@@ -1,0 +1,19 @@
+uuid: b94fec48-3177-4218-987f-1bc3546c446f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_postcode
+    - node.type.article
+id: node.article.field_postcode
+field_name: field_postcode
+entity_type: node
+bundle: article
+label: Postcode
+description: 'Postcode of the area the article relates to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
