@@ -80,6 +80,17 @@ function tech_test_theme_preprocess_maintenance_page(&$variables) {
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
 function tech_test_theme_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $type = $node->getType();
+  $variables['parsed'] = [];
+  switch ($type) {
+    case 'article':
+      $postcode = $node->field_postcode->value;
+      if(!is_null($postcode)) {
+        $variables['parsed']['postcode'] = preg_replace("/[^a-z0-9]/", '', strtolower($postcode));
+      }
+      break;
+  }
   // Remove the "Add new comment" link on teasers or when the comment form is
   // displayed on the page.
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {

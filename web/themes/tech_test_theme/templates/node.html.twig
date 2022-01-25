@@ -100,4 +100,7 @@
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     {{ content }}
   </div>
+  {% if parsed.postcode %}
+    <div id="article_weather" class="weather hidden">{{ parsed.postcode }}</div>
+  {% endif %}
 </article>

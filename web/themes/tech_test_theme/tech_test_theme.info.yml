@@ -24,6 +24,7 @@ libraries:
   - tech_test_theme/classy.messages
   - core/normalize
   - tech_test_theme/global-styling
+  - tech_test_theme/global-scripts
 
 libraries-extend:
   core/drupal.dialog:

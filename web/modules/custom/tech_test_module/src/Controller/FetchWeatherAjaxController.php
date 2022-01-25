@@ -39,22 +39,34 @@ class FetchWeatherAjaxController extends ControllerBase {
 
     ];
 
-    $return = ['Currently unable to fetch weather'];
-    $postcode = substr($postcode, 0, 3);
-    $api_Key = 'e15f84fb261bbcc82b4a19fa0df7d330';
-    $request_url = "api.openweathermap.org/data/2.5/weather?zip=$postcode,gb&appid=$api_Key";
+    /*
+     * This value can be set to override the api call, set it to one
+     * of the values in the mapping array.
+     */
+    $override = NULL;
 
-    $client = \Drupal::httpClient();
-    $response = $client->get($request_url);
+    $return = ['weather' => 'Currently unable to fetch weather'];
+    if (is_null($override)) {
+      $postcode = substr($postcode, 0, 3);
+      $api_Key = 'e15f84fb261bbcc82b4a19fa0df7d330';
+      $request_url = "api.openweathermap.org/data/2.5/weather?zip=$postcode,gb&appid=$api_Key";
 
-    if ($response->getStatusCode() == 200) {
-      $body = (string) $response->getBody();
-      $data = json_decode($body);
-      $weather = strtolower(reset($data->weather)->main);
-      if (array_key_exists($weather, $weather_mapping)) {
-        $return = [$weather_mapping[$weather]];
+      $client = \Drupal::httpClient();
+      $response = $client->get($request_url);
+
+      if ($response->getStatusCode() == 200) {
+        $body = (string) $response->getBody();
+        $data = json_decode($body);
+        $weather = strtolower(reset($data->weather)->main);
+        if (array_key_exists($weather, $weather_mapping)) {
+          $return = ['weather' => $weather_mapping[$weather]];
+        }
       }
+    }
+    else {
+      $return = ['weather' => $weather_mapping[$override]];
     }
     return new JsonResponse($return);
   }
+
 }

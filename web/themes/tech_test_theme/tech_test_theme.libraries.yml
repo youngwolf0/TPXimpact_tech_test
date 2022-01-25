@@ -202,3 +202,8 @@ classy.search-results:
   css:
     component:
       css/classy/components/search-results.css: {}
+
+global-scripts:
+  version: VERSION
+  js:
+    js/scripts.js: {}
