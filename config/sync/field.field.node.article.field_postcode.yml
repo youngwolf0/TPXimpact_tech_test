@@ -10,7 +10,7 @@ field_name: field_postcode
 entity_type: node
 bundle: article
 label: Postcode
-description: 'Postcode of the area the article relates to.'
+description: 'Postcode of the area the article relates to. Please enter full postcode with a space in the middle, otherwise fetching current weather will not work!'
 required: false
 translatable: false
 default_value: {  }

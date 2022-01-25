@@ -1,0 +1,77 @@
+# This theme is marked as @internal. It is intended to evolve and change over
+# minor releases.
+# Change record https://www.drupal.org/node/2673014.
+# As the UI of Drupal improves between minor versions, the mark up and assets
+# in the tech_test_theme theme will change. The tech_test_theme theme is not backwards
+# compatible. If you wish to modify the output or assets of tech_test_theme you can:
+# 1. Copy the whole of tech_test_theme and rename it as your own theme. You will need to
+# manually manage your own updates if you want to stay up to date with tech_test_theme's
+# bug fixes and feature support.
+#
+# 2. Sub-theme tech_test_theme. This is only recommended if you want to make minor
+# tweaks and understand that tech_test_theme could break your modifications as it
+# changes.
+name: tech_test_theme
+type: theme
+base theme: false
+description: 'A quickly hacked version of Bartik for this technical test.'
+package: Core
+core: 8.x
+core_version_requirement: ^8 || ^9
+version: VERSION
+libraries:
+  - tech_test_theme/classy.base
+  - tech_test_theme/classy.messages
+  - core/normalize
+  - tech_test_theme/global-styling
+
+libraries-extend:
+  core/drupal.dialog:
+    - tech_test_theme/classy.dialog
+  core/drupal.dropbutton:
+    - tech_test_theme/classy.dropbutton
+  core/drupal.progress:
+    - tech_test_theme/classy.progress
+  file/drupal.file:
+    - tech_test_theme/classy.file
+  filter/drupal.filter.admin:
+    - tech_test_theme/filter
+  filter/drupal.filter:
+    - tech_test_theme/filter
+  media/media_embed_ckeditor_theme:
+    - tech_test_theme/classy.media_embed_ckeditor_theme
+  media_library/view:
+    - tech_test_theme/classy.media_library
+  media_library/widget:
+    - tech_test_theme/classy.media_library
+  tour/tour:
+    - tech_test_theme/tour
+  user/drupal.user:
+    - tech_test_theme/user
+
+ckeditor_stylesheets:
+  - css/base/elements.css
+  - css/components/captions.css
+  - css/components/table.css
+  - css/components/text-formatted.css
+  - css/classy/components/media-embed-error.css
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'

@@ -1,0 +1,9 @@
+/**
+ * @file
+ * Visual styles for tech_test_theme's page-title component.
+ */
+
+.page-title {
+  font-size: 2em;
+  line-height: 1em;
+}

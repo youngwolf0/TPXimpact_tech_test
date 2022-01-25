@@ -1,0 +1,9 @@
+/**
+ * @file
+ * Contextual links styles for tech_test_theme.
+ */
+
+.contextual-links a {
+  border-bottom: none;
+  text-shadow: 0 0 0;
+}

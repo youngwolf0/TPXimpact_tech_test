@@ -1,0 +1,5 @@
+# Schema for the configuration files of the tech_test_theme theme.
+
+tech_test_theme.settings:
+  type: theme_settings
+  label: 'tech_test_theme settings'

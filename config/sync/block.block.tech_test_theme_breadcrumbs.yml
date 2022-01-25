@@ -1,0 +1,22 @@
+uuid: 8ecdfd2f-3c82-40a9-bf64-948b2414a1ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tech_test_theme
+_core:
+  default_config_hash: y0bXRvKYQQKkf_RVxA3aOPGpIfKKsDOzzrWYCgjxJ9Y
+id: tech_test_theme_breadcrumbs
+theme: tech_test_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
