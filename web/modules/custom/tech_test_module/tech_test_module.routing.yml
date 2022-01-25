@@ -1,0 +1,9 @@
+tech_test_module.fetch_weather:
+  path: '/api/fetch-weather/{postcode}'
+  defaults:
+    _title: 'Fetch weather'
+    _controller: '\Drupal\tech_test_module\Controller\FetchWeatherAjaxController::fetchWeather'
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _permission: 'access content'
