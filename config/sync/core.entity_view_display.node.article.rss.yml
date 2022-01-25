@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.rss
     - field.field.node.article.field_content
     - field.field.node.article.field_postcode
-    - field.field.node.article.field_tags
     - node.type.article
   module:
     - user
@@ -23,4 +22,3 @@ content:
 hidden:
   field_content: true
   field_postcode: true
-  field_tags: true
