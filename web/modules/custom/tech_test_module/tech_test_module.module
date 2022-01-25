@@ -24,3 +24,20 @@ function tech_test_module_form_alter(&$form, FormStateInterface $form_state, $fo
 function tech_test_module_current_user_has_role($role) {
   return in_array($role, \Drupal::currentUser()->getRoles());
 }
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function tech_test_module_preprocess_page_title(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $type = $node->getType();
+    $variables['parsed'] = [];
+    if ($type == 'article') {
+      $postcode = $node->field_postcode->value;
+      if (!is_null($postcode)) {
+        $variables['parsed']['postcode'] = $postcode;
+      }
+    }
+  }
+}
